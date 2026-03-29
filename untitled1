@@ -1,0 +1,187 @@
+{
+  "success": true,
+  "data": {
+    "matchScore": 85,
+    "technicalQuestions": [
+      {
+        "question": "Can you describe how you optimized MongoDB queries in your previous role?",
+        "intention": "To assess practical experience with database performance tuning and specific techniques.",
+        "answer": "In my previous role, I optimized MongoDB queries primarily by implementing proper indexing strategies, especially for frequently queried fields and those used in sorting or aggregation. I also utilized aggregation pipelines more efficiently by pushing filtering operations early in the pipeline to reduce the dataset size quicker. For frequently accessed data, I implemented basic caching using Redis to reduce direct database hits."
+      },
+      {
+        "question": "Explain the migration from a monolithic to a modular service-based architecture you led. What challenges did you face and how did you overcome them?",
+        "intention": "To evaluate experience with architectural decisions, problem-solving, and leadership in backend system redesign.",    
+        "answer": "I led the migration by first identifying independent modules within the monolith. We started by extracting critical, high-traffic services into their own microservices, communicating via REST APIs. Challenges included managing data consistency across services, establishing robust communication protocols, and ensuring smooth deployment with minimal downtime. We overcame these by using a staged rollout, implementing API gateways for routing, and carefully defining service contracts."
+      }
+    ],
+    "behavioralQuestions": [
+      {
+        "question": "Your self-description leans towards frontend, but your work experience is strongly backend focused. How do you balance these interests, especially in a dedicated backend role?",
+        "intention": "To understand motivation, self-awareness, and commitment to a backend-specific role, and how broader interests might inform their backend work.",
+        "answer": "While I do enjoy frontend development and appreciate good user experience, my core passion and experience over the past few years have been in building robust and scalable backend systems. My frontend interest actually helps me understand the API consumer's perspective better, leading to more thoughtful API design. For a dedicated backend role, I am fully committed to focusing on backend technologies and continuous improvement in that domain."
+      },
+      {
+        "question": "Describe a time you encountered a technical challenge where you had to learn a new tool or technology quickly. How did you approach it?",
+        "intention": "To assess adaptability, problem-solving skills, and self-learning capabilities in a professional context.",
+        "answer": "When we decided to implement caching, Redis was a new tool for me. I approached it by first understanding the core concepts through documentation and tutorials. I then started with a small, isolated proof-of-concept to get hands-on experience with its data structures and API. I also consulted with colleagues who had some experience and iterated quickly on the implementation based on their feedback and performance testing."
+      }
+    ],
+    "skillGaps": [
+      {
+        "skill": "Advanced Caching Strategies & Distributed Caching",
+        "severity": "medium"
+      },
+      {
+        "skill": "Advanced Database Schema Design for Scalability",
+        "severity": "medium"
+      }
+    ],
+    "preparationPlan": [
+      {
+        "day": 1,
+        "focus": "Advanced Node.js & Asynchronous Patterns",
+        "tasks": [
+          "Deep dive into the Node.js Event Loop, worker threads, and streams",
+          "Practice advanced error handling and graceful shutdowns in async operations",
+          "Review complex Express.js middleware, routing, and security practices"
+        ]
+      },
+      {
+        "day": 2,
+        "focus": "MongoDB Performance & Schema Optimization",
+        "tasks": [
+          "Study advanced indexing strategies (compound, partial, TTL, geospatial)",
+          "Understand schema design patterns for scalability (e.g., embedding vs. referencing, materialized views)",
+          "Practice complex aggregation framework operations and performance analysis"
+        ]
+      },
+      {
+        "day": 3,
+        "focus": "Caching Strategies & Best Practices",
+        "tasks": [
+          "Explore various caching patterns (e.g., write-through, cache-aside, refresh-ahead)",
+          "Deep dive into Redis data structures and advanced use cases (pub/sub, transactions, lua scripting)",
+          "Understand cache invalidation strategies and consistency models"
+        ]
+      },
+      {
+        "day": 4,
+        "focus": "System Design & Scalability Concepts",
+        "tasks": [
+          "Review common API design patterns for robust and maintainable RESTful services",
+          "Practice designing scalable backend systems, considering load balancing, message queues, and microservices principles",
+          "Familiarize with observability tools and strategies (logging, monitoring, tracing)"
+        ]
+      }
+    ],
+    "title": "Interview Report: Chetan Maurya - Backend Developer (Node.js)"
+  }
+}
+
+
+
+
+
+{
+    "message": "Interview report generated successfully.",
+    "interviewReport": {
+        "jobDescription": "Position: Backend Developer (Node.js)\n\nLocation: Remote / Bangalore\n\nWe are looking for a Backend Developer with strong experience in Node.js and database desing to build scalable and high-performance APIs.\n\nResponsibilities:\n  - Design and develop scalable RESTful APIs using Node.js and Express.\n  - Optimize database performance using indexing, query optimization, and caching strategies.\n\nRequired Skills: \n  - 3+ years experience in backend developement.\n  - Strong knowledge of Node.js and asynchronous program.\n  - Experience with MongoDB and database optimization.",
+        "selfDescription": "I am a passionate Frontend Developer with a strong interest in building responsive and user-friendly web applications. I enjoy transforming ideas into interactive UI using modern technologies like React.js. I focus on writing clean, maintainable code and pay attention to user experience, performance, and design consistency. I am a quick learner who adapts easily to new tools and continuously works on improving my development skills.",
+        "matchScore": 25,
+        "technicalQuestions": [
+            {
+                "question": "Explain asynchronous programming in Node.js and provide an example of how you've used it.",
+                "intention": "Assess core Node.js understanding and practical application of asynchronous patterns.",
+                "answer": "Asynchronous programming is crucial for non-blocking operations. In frontend, I've primarily dealt with it using `async/await` for API calls or promises for managing component lifecycles in React. For Node.js, I understand it's vital for I/O operations and handling multiple requests efficiently, though my direct hands-on experience in a Node.js backend context is limited."
+            },
+            {
+                "question": "Describe your experience with database design, specifically MongoDB, and any optimization techniques you've applied.",
+                "intention": "Gauge database expertise, especially with MongoDB and performance tuning, which are critical for the role.",
+                "answer": "My primary focus has been on consuming data from existing APIs. I have a conceptual understanding of NoSQL databases like MongoDB and their flexible schema design. While I haven't directly designed complex MongoDB schemas or implemented advanced optimization techniques myself, I'm eager to learn and have worked with data structures that could be mapped to document databases."
+            },
+            {
+                "question": "How do you design a RESTful API, and what principles do you follow to ensure scalability and maintainability?",
+                "intention": "Evaluate API design knowledge and understanding of architectural best practices essential for backend development.",
+                "answer": "From a frontend perspective, I appreciate well-structured and consistent RESTful APIs. I understand principles like statelessness, resource-based URLs, and using standard HTTP methods. I ensure my frontend code interacts efficiently with APIs. While I haven't designed APIs from scratch, I'm familiar with the client-side implications of good API design regarding data fetching and state management."
+            }
+        ],
+        "behavioralQuestions": [
+            {
+                "question": "How do you approach learning a new technology or framework that is crucial for a project?",
+                "intention": "Assess the candidate's adaptability, self-learning capabilities, and approach to skill development.",
+                "answer": "I'm a quick learner and adapt easily. My approach involves diving into documentation, tutorials, and building small proof-of-concept projects. For instance, when I first learned React, I built several small applications to grasp its core concepts. I'm always looking to improve my skills and embrace new tools."
+            },
+            {
+                "question": "Describe a time you received feedback on your code and how you incorporated it.",
+                "intention": "Evaluate openness to constructive criticism, collaboration skills, and continuous improvement.",
+                "answer": "In a previous project, a senior developer reviewed my pull request and suggested refactoring a component to improve reusability and performance. I took the feedback constructively, understood the reasoning, and not only applied the changes but also learned a more efficient pattern for future development. I believe code reviews are essential for growth."
+            },
+            {
+                "question": "How do you ensure user experience and performance are considered in your development process?",
+                "intention": "Understand the candidate's holistic view of development quality beyond just functionality, even if the primary experience is frontend.",
+                "answer": "Even as a frontend developer, performance is critical. I optimize rendering, manage state efficiently, and ensure responsive design for various devices. For user experience, I focus on intuitive interfaces, clear navigation, and fast loading times. I believe a good user experience starts with understanding user needs and translating them into efficient and enjoyable interactions."
+            }
+        ],
+        "skillGaps": [
+            {
+                "skill": "Node.js Backend Development",
+                "severity": "high"
+            },
+            {
+                "skill": "Database Design and Optimization (MongoDB)",
+                "severity": "high"
+            },
+            {
+                "skill": "Designing and Developing RESTful APIs",
+                "severity": "medium"
+            },
+            {
+                "skill": "Asynchronous Programming in Node.js Context",
+                "severity": "medium"
+            }
+        ],
+        "preparationPlan": [
+            {
+                "day": 1,
+                "focus": "Node.js Fundamentals & Asynchronous Programming",
+                "tasks": [
+                    "Complete a comprehensive Node.js 'Hello World' to 'Introduction to Express' tutorial.",
+                    "Study Node.js event loop, callbacks, Promises, and async/await in depth.",
+                    "Build a simple command-line Node.js application to practice I/O operations."
+                ]
+            },
+            {
+                "day": 2,
+                "focus": "Express.js & RESTful API Design",
+                "tasks": [
+                    "Learn Express.js basics: routing, middleware, and request/response objects.",
+                    "Design and implement a simple RESTful API (e.g., for a 'Todo' application) using Express.",
+                    "Understand HTTP methods, status codes, and best practices for RESTful API architecture."
+                ]
+            },
+            {
+                "day": 3,
+                "focus": "MongoDB & Basic Database Operations",
+                "tasks": [
+                    "Install MongoDB and a client tool (e.g., MongoDB Compass or Robo 3T).",
+                    "Learn basic CRUD (Create, Read, Update, Delete) operations using Mongoose or the native MongoDB driver.",
+                    "Integrate MongoDB with the Express API developed on Day 2, designing a basic schema for the 'Todo' app."
+                ]
+            },
+            {
+                "day": 4,
+                "focus": "Database Optimization & Advanced Node.js Topics",
+                "tasks": [
+                    "Explore indexing strategies in MongoDB and their impact on query performance.",
+                    "Implement basic query optimization techniques in the 'Todo' API.",
+                    "Learn about error handling, authentication/authorization basics, and environment variables in Express.js."
+                ]
+            }
+        ],
+        "user": "69bd0b7d96fa76c177558ac6",
+        "_id": "69c6997eb041ffe178440f79",
+        "createdAt": "2026-03-27T14:51:42.859Z",
+        "updatedAt": "2026-03-27T14:51:42.859Z",
+        "__v": 0
+    }
+}

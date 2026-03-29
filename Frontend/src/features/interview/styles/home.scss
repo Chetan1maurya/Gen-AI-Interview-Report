@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+
+// ─────────────────────────────────────────────
+// Variables
+// ─────────────────────────────────────────────
+$bg:           #0d1117;
+$surface:      #161b24;
+$surface-alt:  #1c2333;
+$border:       rgba(255, 255, 255, 0.08);
+$accent:       #4fa8f5;
+$accent-glow:  rgba(79, 168, 245, 0.1);
+$text:         #e6edf3;
+$text-muted:   #6e7f97;
+$radius:       16px;
+$radius-sm:    10px;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// ─────────────────────────────────────────────
+// Page — .home
+// ─────────────────────────────────────────────
+.home {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $bg;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+  font-family: 'DM Sans', sans-serif;
+  color: $text;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1.5rem 3rem;
+}
+
+// ─────────────────────────────────────────────
+// Hero — .hero
+// ─────────────────────────────────────────────
+.hero {
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  margin-top: 2.5rem;
+
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $accent;
+    background: $accent-glow;
+    border: 1px solid rgba(79, 168, 245, 0.2);
+    border-radius: 99px;
+    padding: 0.3rem 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: $text;
+    margin-bottom: 1rem;
+
+    em {
+      font-style: normal;
+      color: $accent;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    color: $text-muted;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+}
+
+// ─────────────────────────────────────────────
+// Main Card — .card
+// ─────────────────────────────────────────────
+.card {
+  width: 100%;
+  max-width: 1000px;
+  min-height: 520px;
+  display: flex;
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+}
+
+// ─────────────────────────────────────────────
+// Card Panels — .card-panel
+// ─────────────────────────────────────────────
+.card-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 1.25rem;
+
+  &.left {
+    width: 50%;
+    background: $surface;
+
+    textarea {
+      flex: 1;
+      min-height: 340px;
+    }
+  }
+
+  &.right {
+    width: 50%;
+    background: $surface-alt;
+  }
+}
+
+// Panel heading block
+.panel-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+
+  .step-tag {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: $text-muted;
+  }
+
+  label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $text;
+  }
+
+  .panel-hint {
+    font-size: 0.78rem;
+    color: $text-muted;
+    line-height: 1.5;
+  }
+}
+
+// ─────────────────────────────────────────────
+// Card Divider — .card-divider
+// ─────────────────────────────────────────────
+.card-divider {
+  width: 1px;
+  background: $border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  span {
+    font-size: 0.75rem;
+    color: $text-muted;
+    background: $surface;
+    border: 1px solid $border;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// ─────────────────────────────────────────────
+// Input Group — .input-group
+// ─────────────────────────────────────────────
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: $text;
+  }
+
+  .input-label {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: $text;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  &:has(textarea) {
+    flex: 1;
+    textarea { flex: 1; min-height: 100px; }
+  }
+}
+
+// ─────────────────────────────────────────────
+// Textarea
+// ─────────────────────────────────────────────
+textarea {
+  width: 100%;
+  border: 1px solid $border;
+  border-radius: $radius-sm;
+  background: rgba(255, 255, 255, 0.03);
+  color: $text;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  padding: 0.85rem 1rem;
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &::placeholder { color: $text-muted; }
+
+  &:focus {
+    border-color: rgba(79, 168, 245, 0.4);
+    box-shadow: 0 0 0 3px rgba(79, 168, 245, 0.08);
+  }
+}
+
+// ─────────────────────────────────────────────
+// Highlight text — .highlight
+// ─────────────────────────────────────────────
+.highlight {
+  font-size: 0.7rem;
+  color: $text-muted;
+  font-style: italic;
+  font-weight: 400;
+}
+
+// ─────────────────────────────────────────────
+// File Upload — .file-label
+// ─────────────────────────────────────────────
+.file-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: $radius-sm;
+  color: $text-muted;
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  .upload-icon {
+    font-size: 1rem;
+    font-weight: bold;
+    color: $accent;
+  }
+
+  &:hover {
+    background: $accent-glow;
+    border-color: rgba(79, 168, 245, 0.35);
+    color: $accent;
+  }
+}
+
+// ─────────────────────────────────────────────
+// Primary Button — .primary-button
+// ─────────────────────────────────────────────
+.button {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: $radius-sm;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: auto;
+
+  &.primary-button {
+    background: $accent;
+    color: #08111d;
+
+    &:hover {
+      filter: brightness(1.1);
+      box-shadow: 0 0 28px rgba(79, 168, 245, 0.3);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// ─────────────────────────────────────────────
+// Footer — .site-footer
+// ─────────────────────────────────────────────
+.site-footer {
+  margin-top: 2.5rem;
+  text-align: center;
+
+  p {
+    font-size: 0.78rem;
+    color: $text-muted;
+  }
+}
+
+// ─────────────────────────────────────────────
+// Responsive
+// ─────────────────────────────────────────────
+@media (max-width: 680px) {
+  .card {
+    flex-direction: column;
+    min-height: unset;
+  }
+
+  .card-panel {
+    &.left, &.right { width: 100%; }
+  }
+
+  .card-divider {
+    width: 100%;
+    height: 1px;
+    flex-direction: row;
+  }
+
+  .site-header .nav-links a { display: none; }
+}
