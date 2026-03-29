@@ -7,7 +7,12 @@ import app from './src/app.js'
 import connectToDB from './src/config/db.js'
 
 connectToDB()
+const PORT = process.env.PORT || 3000;
 
-app.listen(process.env.PORT,()=>{
+app.get('/',(req,res) => {
+    res.send("Server is running properly")
+})
+
+app.listen(PORT,()=>{
     console.log("Server is running")
 })
