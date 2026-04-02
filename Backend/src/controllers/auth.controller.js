@@ -109,6 +109,9 @@ export const logoutUserController = async(req, res) => {
  * @access private
  */
 export const getMeController = async(req, res) => {
+    if(req.user.id == null){
+        return
+    }
     const user = await userModel.findOne({ _id: req.user.id })
 
     res.status(200).json({

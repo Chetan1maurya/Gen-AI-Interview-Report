@@ -2,14 +2,18 @@ import React,{useState, useRef, useEffect} from 'react'
 import "../styles/home.scss"
 import { useInterview } from '../hooks/useInterview'
 import { useNavigate } from 'react-router'
+import { useAuth } from '../../auth/hooks/useAuth.js'
 
 const Home = () => {
+    const { handleLogout } = useAuth()
     const {loading, generateReport, reports} = useInterview()
     const [jobDescription, setJobDescription] = useState("")
     const [selfDescription, setSelfDescription] = useState("")
+    const [resumeName, setResumeName] = useState("");
+    const { user } = useAuth()
     const resumeInputRef = useRef()
     const navigate = useNavigate()
-
+    let file = null
     const handleGenerateReport = async() => {
         const resumeFile = resumeInputRef.current.files[0]
         const data = await generateReport({jobDescription, selfDescription, resumeFile})
@@ -30,8 +34,10 @@ const Home = () => {
       <section className="hero">
         <span className="badge">AI-Powered Interview Prep</span>
         <h1>Land your <em>dream job</em><br /></h1>
+        <h1>{user?.username}</h1>
         <p>Paste a job description and your background</p>
       </section>
+      
 
       {/* ── Main Card ── */}
       <section className="card">
@@ -70,11 +76,16 @@ const Home = () => {
               Resume{" "}
               <small className="highlight">Use resume and self description together for best results</small>
             </p>
+            <input ref={resumeInputRef} hidden type="file" name="resume" id="resume" accept=".pdf" onChange={(e) => {
+              file = e.target.files[0];
+              if(file){
+                setResumeName(file.name);
+              }
+            }}/>
             <label className="file-label" htmlFor="resume">
               <span className="upload-icon">↑</span>
-              Upload Resume
+              {resumeName || "Upload Resume"}
             </label>
-            <input ref={resumeInputRef} hidden type="file" name="resume" id="resume" accept=".pdf" />
           </div>
 
           {/* Self Description */}
@@ -96,6 +107,9 @@ const Home = () => {
 
       </section>
       
+      <button className="logout" onClick={ handleLogout }>
+        Logout
+      </button>
       {/* Recent Reports List */}                     
       {reports.length > 0 && (
         <section className='recent-reports'>
@@ -111,7 +125,6 @@ const Home = () => {
             </ul>
         </section>
       )}
-
       {/* ── Footer ── */}
       <footer className="site-footer">
         <p>© 2026 PrepAI · Built with ♥ for job seekers</p>

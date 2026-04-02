@@ -45,7 +45,7 @@ export const useAuth = () => {
         const data = await getMe();
         setUser(data.user);
       } catch (err) {
-        
+        console.log("User is undefined now")
       }
       finally{
         setLoading(false);
