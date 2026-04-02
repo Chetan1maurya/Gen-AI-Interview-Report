@@ -6,7 +6,7 @@ import interviewReportModel from '../models/interviewReport.model.js'
  * @description Controller to generate interview report based on user self description, resume and job description
  */
 export const generateInterviewReportController = async(req,res) => {
-
+    console.log("User:", req.user);
     const resumeContent = new PDFParse(req.file.buffer)
     const {selfDescription, jobDescription} = req.body
 

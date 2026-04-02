@@ -39,7 +39,11 @@ export const registerUserController = async(req, res) => {
         process.env.SECRET_KEY,
         {expiresIn: "1d"}
     )
-    res.cookie("token", token)
+    res.cookie("token", token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "None"
+    })
     return res.status(201).json({
         message: "User registered successfully",
         user: {
@@ -75,7 +79,11 @@ export const loginUserController = async(req,res) => {
         })
     }
     const token = jwt.sign({id:user._id, username: user.username}, process.env.SECRET_KEY,{expiresIn:"1d"})
-    res.cookie("token", token)
+    res.cookie("token", token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "None"
+    })
     return res.status(200).json({
         message: "User Successfully logged In",
         user:{
