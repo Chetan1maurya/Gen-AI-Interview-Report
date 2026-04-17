@@ -1,5 +1,5 @@
 import express from 'express'
-import {registerUserController, loginUserController, logoutUserController, getMeController} from '../controllers/auth.controller.js'
+import {registerUserController, loginUserController, logoutUserController, getMeController, loginWithGoogle} from '../controllers/auth.controller.js'
 import { authUser } from '../middlewares/auth.middleware.js'
 const authRouter = express.Router()
 
@@ -16,6 +16,13 @@ authRouter.post("/register", registerUserController)
  * @access Public
  */
 authRouter.post("/login", loginUserController)
+
+/**
+ * @route POST /api/auth/loginWithGoogle
+ * @description Login user with google
+ * @access Public
+ */
+authRouter.post("/login_with_google", loginWithGoogle)
 
 /**
  * @route POST /api/auth/logout

@@ -30,6 +30,17 @@ export async function login({email, password}){
     }
 }
 
+export async function login_with_google({username, email, password}){
+    try{
+        const response = await api.post("/api/auth/login_with_google",{
+            username, email, password
+        })
+        return response.data
+    }catch(err){
+        console.log(err)
+    }
+}
+
 export async function logout(){
     try{
         const response = await api.get("/api/auth/logout")

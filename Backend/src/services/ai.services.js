@@ -98,8 +98,6 @@ export async function generateInterviewReport({
   selfDescription,
   jobDescription,
 }) {
-  count++;
-  console.log("🔥 Gemini API called:", count);
 
   const ai = new GoogleGenAI({
     apiKey: process.env.GOOGLE_GEMINI_API_KEY,
@@ -152,7 +150,7 @@ STRICT RULES:
 - Ensure correct data types
 - matchScore must be between 0 and 100
 - preparationPlan should have at least 3 days
-- Each array should contain at least 2 items
+- Each array should contain at least 4 items
 
 Now generate the report using:
 
@@ -202,8 +200,8 @@ export async function generatePdfFromHTML(htmlContent){
     top:"20mm",
     bottom: "20mm",
     left: "15mm",
-    right: "15mm"
-  }})
+    right: "15mm",
+  },});
   await browser.close()
   return pdfBuffer
 }

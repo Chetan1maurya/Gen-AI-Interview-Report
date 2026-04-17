@@ -278,7 +278,7 @@ $severity-low: #3fb950;
         top: 0;
         bottom: 0;
         width: 2px;
-        background: linear-gradient(to bottom, $accent, rgba($accent, 0.1));
+        background-color: blue;
         border-radius: 1px;
     }
 }
@@ -291,16 +291,24 @@ $severity-low: #3fb950;
     position: relative;
 
     // dot on timeline
-    &::before {
+    &::before{
         content: '';
         position: absolute;
-        left: 21px;
-        top: 1.05rem;
+        width: 20px;
+        background-color: blue;
+        height: 3px;
+        top: 22px;
+        left: 29px;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        left: 22px;
+        top: 1rem;
         width: 14px;
         height: 14px;
         border-radius: 50%;
-        background-color: $bg-card;
-        border: 2px solid $accent;
+        background-color: blue;
     }
 
     &__header {

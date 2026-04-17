@@ -96,6 +96,40 @@ export const loginUserController = async(req,res) => {
 }
 
 /**
+ * @name loginWithGoogle
+ * @description login using google
+ * @access Public
+ */
+export const loginWithGoogle = async(req,res) => {
+    const {username, email, password} = req.body;
+    let user = await userModel.findOne({email});
+
+    if(!user){
+        user = await userModel.create({
+            email,
+            username,
+            password
+        });
+    }
+
+    const token = jwt.sign({id:user._id, username: user.username}, process.env.SECRET_KEY,{expiresIn:"1d"})
+    res.cookie("token", token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "None"
+    })
+    return res.status(200).json({
+        message: "User Successfully logged In",
+        user:{
+            id: user._id,
+            username: user.username,
+            email: user.email
+        }
+    })
+
+}
+
+/**
  * @name logoutUserController
  * @description clear token from user cookie and add the token in blacklist
  * @access Public
